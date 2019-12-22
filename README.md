@@ -20,7 +20,7 @@ High accessibility:
 
 CI/CD
 * Docker
-* DOcker Compose
+* Docker Compose
 * Circle CI
 
 Modern Web Framework
