@@ -25,7 +25,7 @@ CI/CD
 
 Modern Web Framework
 * Django >3.0
-* Python 3.8.1
+* Python 3.6
 
 Automated upgrades
 * Self-auditing software
