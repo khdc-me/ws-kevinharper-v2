@@ -13,7 +13,7 @@ jobs:
       - run:
           command: |
             sudo pip install pipenv
-            pipenv install --system
+            pipenv install --dev --system
             flake8
             python manage.py test
 
