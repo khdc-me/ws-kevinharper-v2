@@ -2,7 +2,7 @@ version: 2
 
 jobs:
   run-python-tests:
-  # flak8 and test unit tests
+  # flake8 and test unit tests
     docker:
       - image: circleci/python:3.6
         environment:
@@ -13,8 +13,9 @@ jobs:
       - run:
           command: |
             sudo pip install pipenv
-            pipenv install
-            pipenv run python manage.py test
+            pipenv install --dev --system
+            flake8
+            python manage.py test
 
 #  deploy-to-stage:
 #  # deploy to https://staging.kevinharper.com/
