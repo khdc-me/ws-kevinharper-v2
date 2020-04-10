@@ -1,6 +1,6 @@
 from ._base import *	# NOQA
 
 
-DEBUG = 'True'
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
