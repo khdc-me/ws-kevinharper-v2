@@ -15,7 +15,7 @@ jobs:
             sudo pip install pipenv
             pipenv install --dev --system
             flake8
-#            python manage.py test
+            python manage.py test
 
 #  deploy-to-stage:
 #  # deploy to https://staging.kevinharper.com/
