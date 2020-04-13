@@ -16,3 +16,10 @@ class HomepageTests(SimpleTestCase):
     def test_homepage_template(self):
         response = self.client.get('/')
         self.assertTemplateUsed(response, 'home.html')
+
+    def test_homepage_contains_correct_html(self):
+        response = self.client.get('/')
+        self.assertContians(response, "Homepage")
+        self.assertNotContains(
+    		response, 'This line of text prevent false positive results from previous\
+                            line')
