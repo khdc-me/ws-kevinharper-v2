@@ -31,12 +31,12 @@ workflows:
   test-local_deploy-stage_deploy-prod:
     jobs:
       - run-python-tests
-#      - review-PR:
-#          # Visually check code changes that were
-#          #   submitted via PR
-#          type: approval
-#          requires:
-#            - run-python-tests
+      - review-PR:
+          # Visually check code changes that were
+          #   submitted via PR
+          type: approval
+          requires:
+            - run-python-tests
 #      - deploy-to-stage:
 #         requires:
 #           - review-PR
