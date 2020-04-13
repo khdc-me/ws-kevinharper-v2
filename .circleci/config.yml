@@ -3,11 +3,11 @@ version: 2
 jobs:
   run-python-tests:
   # flake8 and test unit tests
-#    docker:
-#      - image: circleci/python:3.6
-#        environment:
-#          PYTHONUNBUFFERED: 1
-#          DJANGO_SETTINGS_MODULE: config.settings.dev
+    docker:
+      - image: circleci/python:3.6
+        environment:
+          PYTHONUNBUFFERED: 1
+          DJANGO_SETTINGS_MODULE: config.settings.dev
     steps:
       - checkout
       - run:
