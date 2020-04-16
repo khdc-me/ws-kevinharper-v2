@@ -26,7 +26,7 @@ jobs:
       - run:
           name: Deploy to Stage
           command: |
-            ssh $STAGINGUSERNAME@$STAGINGHOST "cd sites/staging-kevinharper-com && ./deploy.sh"
+            ssh -i $STAGING_KEY $STAGINGUSERNAME@$STAGINGHOST "cd sites/staging-kevinharper-com && ./deploy.sh"
 
 
 #  deploy-to-prod:
