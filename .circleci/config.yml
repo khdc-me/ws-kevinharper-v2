@@ -23,6 +23,7 @@ jobs:
       - enabled: true
     steps:
       - run:
+        name: Deploy to Stage
         command: |
           ssh $STAGINGUSERNAME@$STAGINGHOST "cd sites/staging-kevinharper-com && ./deploy.sh"
 
