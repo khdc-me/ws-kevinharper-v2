@@ -17,9 +17,14 @@ jobs:
             flake8
             python manage.py test
 
-#  deploy-to-stage:
-#  # deploy to https://staging.kevinharper.com/
-#  #   on AWS
+  deploy-to-stage:
+  # deploy to https://staging.kevinharper.com/
+    machine:
+      - enabled: true
+    steps:
+      - run:
+        command: |
+          ssh $STAGINGUSERNAME@$STAGINGHOST "cd sites/staging-kevinharper-com && ./deploy.sh"
 
 
 #  deploy-to-prod:
@@ -37,9 +42,14 @@ workflows:
           type: approval
           requires:
             - run-python-tests
-#      - deploy-to-stage:
-#         requires:
-#           - review-PR
+      - deploy-to-stage:
+         requires:
+           - review-PR
+      - review-staging:
+          # Visually check site
+          type: approval
+          requires:
+            - deploy-to-stage
 #      - deploy-to-prod:
 #          filters:
 #            branches:
