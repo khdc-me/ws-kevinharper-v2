@@ -29,7 +29,8 @@ jobs:
           command: |
             ssh $STAGING_USER@$STAGING_HOST << EOF
 
-              touch from_circleci.txt
+              cd sites/staging-kevinharper-com
+              ./deploy.sh
 
             EOF
 
