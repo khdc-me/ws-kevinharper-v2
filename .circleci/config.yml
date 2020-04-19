@@ -17,16 +17,21 @@ jobs:
             flake8
             python manage.py test
 
-  deploy-to-stage:
+  deploy-to-staging:
   # deploy to https://staging.kevinharper.com/
-    machine:
-      image: ubuntu-1604:201903-01
+    machine: true
     steps:
-      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "a6:fc:3f:ab:e9:d6:02:96:30:69:59:ac:54:f7:ec:b3"
       - run:
-          name: "Deploy to Stage"
+          name: "Deploy to Staging"
           command: |
-            ssh -v -i $STAGING_KEY $STAGING_USER@$STAGING_HOST "touch from_circleci.txt"
+            ssh $STAGING_USER@$STAGING_HOST << EOF
+
+              touch from_circleci.txt
+
+            EOF
 
 
 #  deploy-to-prod:
@@ -44,14 +49,14 @@ workflows:
           type: approval
           requires:
             - run-python-tests
-      - deploy-to-stage:
+      - deploy-to-staging:
          requires:
            - review-PR
       - review-staging:
           # Visually check site
           type: approval
           requires:
-            - deploy-to-stage
+            - deploy-to-staging
 #      - deploy-to-prod:
 #          filters:
 #            branches:
