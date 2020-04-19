@@ -25,7 +25,11 @@ jobs:
       - checkout
       - run:
           name: "Deploy to Stage"
-          command: ssh -v -i $KEY $USER@$HOST "echo success"
+          command: |
+            # ssh -v -i $KEY $USER@$HOST "echo success"
+            echo "key: " + $KEY
+            echo "user: " + $USER
+            echo "host: " + $HOST
 
 
 #  deploy-to-prod:
