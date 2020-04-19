@@ -24,7 +24,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Deploy to Stage
+          name: "Deploy to Stage"
           command: ssh -v -i $KEY $USER@$HOST "echo success"
 
 
