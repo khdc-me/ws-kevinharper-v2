@@ -26,7 +26,7 @@ jobs:
       - run:
           name: Deploy to Stage
           command: |
-            ssh -i $KEY $USER@$HOST
+            ssh -v -i $KEY -l $USER -W $HOST:22 "echo success"
 
 
 #  deploy-to-prod:
