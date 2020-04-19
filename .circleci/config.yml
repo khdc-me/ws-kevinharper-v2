@@ -30,7 +30,8 @@ jobs:
             ssh $STAGING_USER@$STAGING_HOST << EOF
 
               cd sites/staging-kevinharper-com
-              ./deploy.sh
+              git clone https://github.com/khdc-me/ws-kevinharper.git
+              cd ws-kevinharper
 
             EOF
 
