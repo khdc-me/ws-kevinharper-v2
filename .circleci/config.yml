@@ -26,10 +26,7 @@ jobs:
       - run:
           name: "Deploy to Stage"
           command: |
-            # ssh -v -i $KEY $USER@$HOST "echo success"
-            echo "key: " + $STAGING_KEY
-            echo "user: " + $STAGING_USER
-            echo "host: " + $STAGING_HOST
+            # ssh -v -i $STAGING_KEY $STAGING_USER@$STAGING_HOST "echo success"
 
 
 #  deploy-to-prod:
