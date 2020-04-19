@@ -19,8 +19,8 @@ jobs:
 
   deploy-to-stage:
   # deploy to https://staging.kevinharper.com/
-    docker:
-      - image: circleci/python:3.6
+    machine:
+      image: ubuntu-1604:201903-01
     steps:
       - checkout
       - run:
