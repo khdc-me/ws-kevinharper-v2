@@ -53,10 +53,25 @@ jobs:
           command: |
             ssh $STAGING_USER@$STAGING_HOST << EOF
 
-              cd sites/staging-kevinharper-com/ws-kevinharper
-              docker-compose down
-              cd ..
-              rm -rf ws-kevinharper
+              cd sites/staging-kevinharper-com/ws-kevinharper \
+              && docker-compose down \
+              && cd .. \
+              && rm -rf ws-kevinharper
+
+            EOF
+
+            ssh $PROD_USER@PROD_HOST << EOF
+
+              cd sites/production-kevinharper-com \
+              && tar czf backups/production-kevinharper-com-$(date '+%Y-%m-%d').tar.gz production-kevinharper-com/ \
+              && rm -rf ws-kevinharper \
+              && git clone https://github.com/khdc-me/ws-kevinharper.git \
+              && cp production.py ws-kevinharper/config/settings/ \
+              && rm ws-kevinharper/docker-compose.yml \
+              && cp docker-compose.yml ws-kevinharper/ \
+              && cd ws-kevinharper \
+              && docker-compose up --build -d
+
 
             EOF
 
