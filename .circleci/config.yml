@@ -31,14 +31,32 @@ jobs:
 
               cd sites/staging-kevinharper-com
               git clone https://github.com/khdc-me/ws-kevinharper.git
+              cp staging_settings.py ws-kevinharper/config/settings/
+              rm ws-kevinharper/docker-compose.yml
+              cp docker-compose.yml ws-kevinharper/
               cd ws-kevinharper
+              docker-compose up -d
 
             EOF
 
 
-#  deploy-to-prod:
-#  # deploy to https://kevinharper.com/
-#  #   on Digital Ocean
+  deploy-to-prod:
+  # deploy to https://kevinharper.com/
+  #   on Digital Ocean
+    machine: true
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "a6:fc:3f:ab:e9:d6:02:96:30:69:59:ac:54:f7:ec:b3"
+      - run:
+          name: "Deploy to Staging"
+          command: |
+            ssh $STAGING_USER@$STAGING_HOST << EOF
+
+              cd sites/staging-kevinharper-com/ws-kevinharper
+              docker-compose down
+
+            EOF
 
 workflows:
   version: 2
@@ -59,7 +77,7 @@ workflows:
           type: approval
           requires:
             - deploy-to-staging
-#      - deploy-to-prod:
-#          filters:
-#            branches:
-#              only: master
+      - deploy-to-prod:
+          filters:
+            branches:
+              only: master
