@@ -31,11 +31,11 @@ jobs:
 
               cd sites/staging-kevinharper-com \
               && git clone https://github.com/khdc-me/ws-kevinharper.git \
-              && cp staging_settings.py ws-kevinharper/config/settings/ \
+              && cp staging.py ws-kevinharper/config/settings/ \
               && rm ws-kevinharper/docker-compose.yml \
               && cp docker-compose.yml ws-kevinharper/ \
               && cd ws-kevinharper \
-              && docker-compose up -d
+              && docker-compose up --build -d
 
             EOF
 
