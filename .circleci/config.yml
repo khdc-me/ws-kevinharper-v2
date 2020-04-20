@@ -55,6 +55,8 @@ jobs:
 
               cd sites/staging-kevinharper-com/ws-kevinharper
               docker-compose down
+              cd ..
+              rm -rf ws-kevinharper
 
             EOF
 
