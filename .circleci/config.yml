@@ -27,22 +27,15 @@ jobs:
       - run:
           name: "Build and push Docker image"
           command: |
-            docker-compose up --build -d
-            
+            echo "$DOCKER_PASSWD" | docker login --username $DOCKER_USER --password-stdin
+            docker build -t khdcme/www-kevinharper-com:staging .
+            docker push khdcme/www-kevinharper-com:staging            
       - run:
           name: "Deploy to Staging"
           command: |
-
             ssh $STAGING_USER@$STAGING_HOST << EOF
-
-              cd sites/staging-kevinharper-com \
-              && git clone https://github.com/khdc-me/ws-kevinharper.git \
-              && cp staging.py ws-kevinharper/config/settings/ \
-              && rm ws-kevinharper/docker-compose.yml \
-              && cp docker-compose.yml ws-kevinharper/ \
-              && cd ws-kevinharper \
-              && docker-compose up --build -d
-
+              cd sites \
+              && docker-compose up -d
             EOF
 
 
