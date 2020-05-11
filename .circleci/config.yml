@@ -75,7 +75,7 @@ workflows:
       - run-python-tests
       - review-PR:
           filters:
-            braches:
+            branches:
               ignore: master
           # Visually check code changes that were
           #   submitted via PR
@@ -84,13 +84,13 @@ workflows:
             - run-python-tests
       - deploy-to-staging:
           filters:
-            braches:
+            branches:
               ignore: master
          requires:
            - review-PR
       - review-staging:
           filters:
-            braches:
+            branches:
               ignore: master
           # Visually check site
           type: approval
