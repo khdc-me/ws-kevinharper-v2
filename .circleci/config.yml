@@ -25,8 +25,14 @@ jobs:
           fingerprints:
             - "a6:fc:3f:ab:e9:d6:02:96:30:69:59:ac:54:f7:ec:b3"
       - run:
+          name: "Build and push Docker image"
+          command: |
+            docker-compose up --build -d
+            
+      - run:
           name: "Deploy to Staging"
           command: |
+
             ssh $STAGING_USER@$STAGING_HOST << EOF
 
               cd sites/staging-kevinharper-com \
