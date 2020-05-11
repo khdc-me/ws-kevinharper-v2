@@ -7,7 +7,7 @@ jobs:
       - image: circleci/python:3.6
         environment:
           PYTHONUNBUFFERED: 1
-          DJANGO_SETTINGS_MODULE: config.settings.dev
+          DJANGO_SETTINGS_MODULE: config.settings.settings
     steps:
       - checkout
       - run:
