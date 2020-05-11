@@ -5,12 +5,13 @@ from pathlib import Path
 BASE_DIR = Path(__file__).parent.parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY', 'dev-secret-key')
+SECRET_KEY = os.getenv('SECRET_KEY', default='dev-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv('DEBUG', default=True)
 
-ALLOWED_HOSTS = []
+dev_django_hosts = '*'
+ALLOWED_HOSTS = os.getenv('DJANGO_HOSTS', default=dev_django_hosts).split(",")
 
 # Application definition
 INSTALLED_APPS = [
