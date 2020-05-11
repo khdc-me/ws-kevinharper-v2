@@ -21,6 +21,7 @@ jobs:
   # deploy to https://staging.kevinharper.com/
     machine: true
     steps:
+      - checkout
       - add_ssh_keys:
           fingerprints:
             - "a6:fc:3f:ab:e9:d6:02:96:30:69:59:ac:54:f7:ec:b3"
