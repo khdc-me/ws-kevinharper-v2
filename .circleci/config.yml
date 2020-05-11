@@ -72,7 +72,10 @@ workflows:
   version: 2
   test-local_deploy-stage_deploy-prod:
     jobs:
-      - run-python-tests
+      - run-python-tests:
+          filters:
+            branches:
+              ignore: master
       - review-PR:
           filters:
             branches:
