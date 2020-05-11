@@ -35,8 +35,7 @@ jobs:
           name: "Deploy to Staging"
           command: |
             ssh $STAGING_USER@$STAGING_HOST << EOF
-              cd sites \
-              && docker-compose up -d
+              docker-compose -f sites/staging-kevinharper-com/docker-compose.yml up -d
             EOF
 
 
