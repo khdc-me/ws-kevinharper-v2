@@ -89,8 +89,8 @@ workflows:
           filters:
             branches:
               ignore: master
-         requires:
-           - review-PR
+          requires:
+            - review-PR
       - review-staging:
           filters:
             branches:
