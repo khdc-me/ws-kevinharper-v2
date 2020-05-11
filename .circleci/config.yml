@@ -65,7 +65,9 @@ jobs:
           name: "Deploy to Production"
           command: |
             ssh $PROD_USER@$PROD_HOST << EOF
-              docker-compose -f sites/www-kevinharper-com/docker-compose.yml up -d
+              docker-compose -f sites/www-kevinharper-com/docker-compose.yml down \
+              && docker rmi khdcme/www-kevinharper-com:latest \
+              && docker-compose -f sites/www-kevinharper-com/docker-compose.yml up -d
             EOF
 
 workflows:
