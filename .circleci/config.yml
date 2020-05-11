@@ -64,7 +64,7 @@ jobs:
       - run:
           name: "Deploy to Production"
           command: |
-            ssh $PROD_USER@PROD_HOST << EOF
+            ssh $PROD_USER@$PROD_HOST << EOF
               docker-compose -f sites/www-kevinharper-com/docker-compose.yml up -d
             EOF
 
@@ -74,15 +74,24 @@ workflows:
     jobs:
       - run-python-tests
       - review-PR:
+          filter:
+            braches:
+              ignore: master
           # Visually check code changes that were
           #   submitted via PR
           type: approval
           requires:
             - run-python-tests
       - deploy-to-staging:
+          filter:
+            braches:
+              ignore: master
          requires:
            - review-PR
       - review-staging:
+          filter:
+            braches:
+              ignore: master
           # Visually check site
           type: approval
           requires:
