@@ -74,7 +74,7 @@ workflows:
     jobs:
       - run-python-tests
       - review-PR:
-          filter:
+          filters:
             braches:
               ignore: master
           # Visually check code changes that were
@@ -83,13 +83,13 @@ workflows:
           requires:
             - run-python-tests
       - deploy-to-staging:
-          filter:
+          filters:
             braches:
               ignore: master
          requires:
            - review-PR
       - review-staging:
-          filter:
+          filters:
             braches:
               ignore: master
           # Visually check site
