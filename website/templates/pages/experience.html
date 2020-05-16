@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="I love to code. I've held a wide range of jobs in IT - ranging from web developer to systems administrator. Developing software to solve complex problems is what I enjoy most.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Kevin Harper | Professional Experience</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/80d69941fb.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+
+    <style>
+      * {margin: 0; border: 0, padding: 0;}
+
+      body {
+        background: #f0f0f0;
+      }
+
+      header {
+        float: left;
+
+        min-width: 350px;
+        width: 100%;
+        background: #f0f0f0;
+
+        border-bottom: 1px solid #ff0000;
+      }
+
+      h1 {
+        position: relative;
+        margin-top: 25px;
+        margin-right: auto;
+        margin-left: auto;
+
+        text-align: center;
+        font-family: 'Roboto', Arial, Verdana, Helvetica, sans-serif;
+        font-size: 45pt;
+        line-height: 80%;
+        color: #050505;
+      }
+
+      h2 {
+        position: relative;
+        margin-top: 10px;
+        margin-right: auto;
+        margin-left: auto;
+
+        text-align: center;
+        font-family: 'Playfair Display', "Times New Roman", serif;
+        font-size: 25pt;
+        color: #050505;
+      }
+
+      #container{
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+
+        min-width: 350px;
+        width: 100%;
+        max-width: 960px;
+
+        background: #fafafa;
+
+        overflow: hidden;
+      }
+
+      #container .right-col {
+        clear: right;
+        float: right;
+        margin-top: 10px;
+
+        width: 100%;
+        max-width: 360px;
+
+        border: 1px solid #f0f0f0;
+      }
+
+      .right-col ul {
+        float: left;
+        margin-top: 7px;
+        margin-bottom: 7px;
+        list-style-type: none;
+      }
+
+      .right-col ul li {
+        display: block;
+        height: 21px;
+      }
+
+      .right-col .sub-list {
+        display: block;
+        margin-left: 15px;
+        font-size: 8pt;
+        height: 12pt;
+      }
+
+      .right-col .cont-list{
+        margin-top: 15px;
+      }
+
+      #container .left-col {
+        clear: left;
+        float: left;
+        margin-top: 10px;
+
+        min-width: 345px;
+        width: 100%;
+        max-width: 595px;
+      }
+
+      h3 {
+        margin-left: 10px;
+        width: 75%;
+        font-family: 'Playfair Display', "Times New Roman", serif;
+        font-size: 25pt;
+        color: #050505;
+        border-bottom: 1px solid #050505;
+      }
+
+      p {
+        padding: 15px;
+
+        color: 050505;
+      }
+
+      a {
+        color: #050505;
+        text-decoration: underline;
+      }
+
+      a:hover {
+        color: #606060;
+        text-decoration: none;
+      }
+
+      #contact-info ul li a:hover .fa-file-pdf-o {
+        color: #ed1c24;
+      }
+
+      #contact-info ul li a:hover .fa-laptop {
+        color: #606060;
+      }
+
+      #contact-info ul li a:hover .fa-envelope {
+        color: #eee8aa;
+      }
+
+      #contact-info ul li a:hover .fa-github {
+        color: #24292e;
+      }
+
+      #contact-info ul li a:hover .fa-linkedin-square {
+        color: #0077b5;
+      }
+
+      #contact-info ul li a:hover .fa-slack {
+        color: #c90125;
+      }
+
+      #highlights {
+        height: 210px;
+      }
+
+      .cols-2-top {
+        clear: both;
+        margin-right: auto;
+        margin-left: auto;
+        width: 95%;
+
+        background: #f0f0f0;
+      }
+
+      .cols-2-left {
+        margin-left: 5%;
+        width: 55%;
+        float: left;
+      }
+
+      .cols-2-imgs {
+        width: 100%;
+        margin-top: 20px;
+        text-align: center;
+        color: #ff0000;
+      }
+
+      .cols-2-left p {
+        padding-top: 0px;
+      }
+
+      .cols-2-right {
+        margin-right: 5%;
+        width: 35%;
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Kevin Harper</h1>
+      <h2>System Admin &amp; Python Developer</h2>
+    </header>
+    <div id="container">
+      <a name="contact-me"></a>
+      <div id="contact-me" class="right-col">
+        <h3><i class="fa fa-address-card-o" aria-hidden="true"></i> I'm at</h3>
+        <div id="contact-links">
+          <ul>
+            <li><a href="{% url 'home' %}" title="Personal Web Site | Home"><i class="fa fa-laptop" aria-hidden="true"> www/home/</i></a></li>
+            <li><a href="mailto:kevin@kevinharper.com" title="E-mail: kevin@kevinharper.com"><i class="fa fa-envelope" aria-hidden="true"> E-mail</i></a></li>
+            <li><a href="https://github.com/khdc-me" title="GitHub: My Open Source Contributions" target="_blank"><i class="fa fa-github" aria-hidden="true"> GitHub</i></a></li>
+          </ul>
+        </div>
+      </div>
+      <a name="summary"></a>
+      <div id="summary" class="left-col">
+        <h3><i class="fa fa-info-circle" aria-hidden="true"></i> Summary</h3>
+        <p>I've held several IT positions, ranging from web development, to client liaison, to server administration. Implementing open source technologies and developing software to solve complex problems is what I have enjoyed the most.</p>
+      </div>
+      <a name="current-dev-stack"></a>
+      <div id="current-dev-stack" class="right-col">
+        <h3><i class="fas fa-server"></i> My Dev Stack</h3>
+        <ul>
+          <li>AWS or Digital Ocean</li>
+          <li>Linux<br>
+            <span class="sub-list"> Ubuntu &gt; Debian
+          </li>
+          <li class="cont-list">Traefik<br>
+            <span class="sub-list"> SSL via LetsEncrypt</span>
+          </li>
+          <li class="cont-list">Docker<br>
+            <span class="sub-list"> Docker Compose | alpine linux based images</span>
+          </li>
+          <li class="cont-list">Python<br>
+            <span class="sub-list"> Pipenv | Django | gunicorn</span>
+          </li>
+          <li class="cont-list">NGINX</li>
+          <li>PostgreSQL<br>
+            <span class="sub-list"> Amazon RDS</span>
+          </li>
+          <br>
+        </ul>
+      </div>
+      <div id="experience" class="left-col">
+        <h3><i class="fa fa-briefcase" aria-hidden="true"></i> Experience</h3>
+        <p>Collection of some of the tools I've used in my 10+ years in IT.</p>
+        <div class="cols-2-top">
+          <p>Operating Systems</p>
+        </div>
+        <div class="cols-2-left">
+          <p class="cols-2-imgs">
+            <i class="fa fa-linux" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+            <i class="fab fa-windows" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+            <i class="fab fa-apple" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+          </p>
+          <p><b>Linux &amp; Windows Servers:</b><br>
+          I prefer Ubuntu but will deploy Debian or CentOS when it makes sense.</p>
+          <p>Also familiar with Windows 2003, 2008R2, &amp; 2012R2 servers.</p>
+          
+          <p><b>Linux, Windows, &amp; Mac Desktops:</b><br>
+          I run KDE neon on my laptop. I test drive different distros every couple of years,
+          but I've always ended up back to Unbutu or a derivative.</p>
+          <p>I also work with Windows and Macs on a daily basis.</p>
+        </div>
+        <div class="cols-2-right">
+          <br>
+          <ul>
+            <li>VMWare</li>
+            <li>vSphere</li>
+            <li>AD</li>
+            <li>LDAP</li>
+            <li>Network Shares</li>
+            <li>DNS</li>
+            <li>NAS</li>
+            <li>GitLab Servers</li>
+            <li>Web Servers</li>
+            <li>DB Servers</li>
+            <li>WSUS</li>
+            <li>pfSense</li>
+          </ul>
+        </div>
+        <div class="cols-2-top">
+          <p>Software Development</p>
+        </div>
+        <div class="cols-2-left">
+          <br>
+          <p>Current development focus: Web-based software running on a Linux,
+          NGINX, PostgreSQL and Django stack, containerized by Docker.</p>
+          <p>Basic knowledge of Apache, mySQL, PHP, CSS, and ES6/JS. Some exposure to
+          Angular and Node.</p>
+          <p>While not a designer by any stretch of the imagination, I am confident
+          in ability at laying out UI.</p>
+          <p>Academic exposure to Java, VB.net, MS Visual Studio, and C.</p>
+        </div>
+        <div class="cols-2-right">
+          <p class="cols-2-imgs">
+            <i class="fas fa-lightbulb"></i>&nbsp;&nbsp;&nbsp;
+            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+            <i class="fa fa-code" aria-hidden="true"></i>
+          </p>
+          <ul>
+            <li>Open Source</li>
+            <li>Python</li>
+            <li>LAMP</li>
+            <li>WordPress</li>
+            <li>WIX</li>
+            <li>API clients</li>
+            <li>SemanticUI</li>
+            <li>Bootstrap</li>
+            <li>Font Awesome</li>
+            <li>jQuery</li>
+          </ul>
+          <br>
+        </div>
+        <div class="cols-2-top">
+          <p>Data</p>
+        </div>
+        <div class="cols-2-left">
+          <p  class="cols-2-imgs">
+            <i class="fa fa-database" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+            <i class="fa fa-bar-chart" aria-hidden="true"></i>
+          </p>
+          <p><b>Databases:</b><br>
+          Basic understanding of PostgreSQL, mySQL, and FileMaker.</p>
+          <p>Academic exposure to MS Access.</p>
+          
+          <p><b>Data Visualization:</b><br>
+          Basic knowledge of matplotlib Python package and Chart.js for web-based visualization.</p>
+        </div>
+        <div class="cols-2-right">
+          <br>
+          <ul>
+            <li>AWS RDS</li>
+            <li>wget</li>
+            <li>SQL</li>
+            <li>JSON</li>
+            <li>XML</li>
+            <li>XSLT</li>
+            <li>Excel Dashboards</li>
+          </ul><br>
+        </div>
+        <div class="cols-2-top">
+          <p>Other IT</p>
+        </div>
+        <div class="cols-2-left">
+          <br>
+          <p>Docker, AWS, LXC/LXD, Ansible, git, network configuration.</p>
+          <p>Phone system support &amp; maintenance, to include: Positron PBX, OpenPBX,
+          Nortel BCM. Exposure to Avaya-based systems.</p>
+          <p>Use of open source software whenever possible.</p>
+          <br>
+        </div>
+        <div class="cols-2-right">
+          <p class="cols-2-imgs">
+            <i class="fab fa-docker"></i>&nbsp;&nbsp;&nbsp;
+            <i class="fab fa-aws"></i>&nbsp;&nbsp;&nbsp;
+            <i class="fab fa-gitlab"></i>
+          </p>
+          <ul>
+            <li>Docker Compose</li>
+            <li>AWS EC2</li>
+            <li>AWS RDS</li>
+            <li>GitHub</li>
+            <li>GitLab</li>
+            <li>Aerohive Networks</li>
+            <li>Netgear</li>
+            <li>Extreme Networks</li>
+          </ul>
+        </div>
+      </div>
+      <a name="education"></a>
+      <div id="education" class="right-col">
+        <h3><i class="fa fa-graduation-cap" aria-hidden="true"></i> Education</h3>
+          <p><strong>Cloud, OS, CI, &amp; CD</strong></br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Linux Academy | Dec/2017 - Current</p>
+            
+          <p><strong>Data Analysis</strong><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;General Assembly | Jun/2017</p>
+
+          <p><strong>Molecular & Cellular Biology</strong></br>
+            &nbsp;&nbsp;&nbsp;&nbsp;University of Arizona | Dec/2010</p>
+      </div>
+    </div>
+  </body>
+</html>
