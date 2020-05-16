@@ -8,10 +8,10 @@ BASE_DIR = Path(__file__).parent.parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', default='dev-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', default=True)
+DEBUG = os.getenv('DEBUG', default=False)
 
-dev_django_hosts = '*'
-ALLOWED_HOSTS = os.getenv('DJANGO_HOSTS', default=dev_django_hosts).split(",")
+dev_allowed_hosts = '*'
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', default=dev_allowed_hosts).split(",") # noqa
 
 # Application definition
 INSTALLED_APPS = [
