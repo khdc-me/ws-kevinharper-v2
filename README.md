@@ -29,7 +29,7 @@ Modern Web Framework
 * Django >3.0
 * Python 3.8
 
-Automated upgrades
+Automated upgrades (PyUp)
 * Self-auditing software
 * Self-updating software
 
