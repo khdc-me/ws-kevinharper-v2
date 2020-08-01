@@ -19,7 +19,7 @@ services:
       - internal
       
   nginx:
-    image: nginx:1.19.0-alpine
+    image: nginx:1.19.1-alpine
     volumes:
       - ./website/static:/usr/src/app/ws-kevinharper/website/static/
       - ./nginx/:/etc/nginx/conf.d/
