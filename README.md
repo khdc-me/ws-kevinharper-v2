@@ -26,8 +26,8 @@ CI/CD
 * Circle CI
 
 Modern Web Framework
-* Django >3.0
-* Python 3.8
+* Latest Django 3.0.X
+* Latest Python 3.9.X
 
 Automated upgrades (PyUp)
 * Self-auditing software
